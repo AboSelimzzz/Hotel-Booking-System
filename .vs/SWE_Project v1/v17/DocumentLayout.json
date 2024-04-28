@@ -1,0 +1,124 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\APPS\\VS\\Projects\\SWE_Project v1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A1E97DD8-633F-4060-8E53-FF4E436F0587}|SWE_Project v1\\SWE_Project v1.csproj|g:\\apps\\vs\\projects\\swe_project v1\\swe_project v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1E97DD8-633F-4060-8E53-FF4E436F0587}|SWE_Project v1\\SWE_Project v1.csproj|solutionrelative:swe_project v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1E97DD8-633F-4060-8E53-FF4E436F0587}|SWE_Project v1\\SWE_Project v1.csproj|G:\\APPS\\VS\\Projects\\SWE_Project v1\\swe_project v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A1E97DD8-633F-4060-8E53-FF4E436F0587}|SWE_Project v1\\SWE_Project v1.csproj|solutionrelative:swe_project v1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1E97DD8-633F-4060-8E53-FF4E436F0587}|SWE_Project v1\\SWE_Project v1.csproj|G:\\APPS\\VS\\Projects\\SWE_Project v1\\swe_project v1\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A1E97DD8-633F-4060-8E53-FF4E436F0587}|SWE_Project v1\\SWE_Project v1.csproj|solutionrelative:swe_project v1\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1E97DD8-633F-4060-8E53-FF4E436F0587}|SWE_Project v1\\SWE_Project v1.csproj|G:\\APPS\\VS\\Projects\\SWE_Project v1\\swe_project v1\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1E97DD8-633F-4060-8E53-FF4E436F0587}|SWE_Project v1\\SWE_Project v1.csproj|solutionrelative:swe_project v1\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1E97DD8-633F-4060-8E53-FF4E436F0587}|SWE_Project v1\\SWE_Project v1.csproj|G:\\APPS\\VS\\Projects\\SWE_Project v1\\swe_project v1\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1E97DD8-633F-4060-8E53-FF4E436F0587}|SWE_Project v1\\SWE_Project v1.csproj|solutionrelative:swe_project v1\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1E97DD8-633F-4060-8E53-FF4E436F0587}|SWE_Project v1\\SWE_Project v1.csproj|G:\\APPS\\VS\\Projects\\SWE_Project v1\\swe_project v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1E97DD8-633F-4060-8E53-FF4E436F0587}|SWE_Project v1\\SWE_Project v1.csproj|solutionrelative:swe_project v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form2.cs [Design]",
+              "DocumentMoniker": "G:\\APPS\\VS\\Projects\\SWE_Project v1\\SWE_Project v1\\Form2.cs",
+              "RelativeDocumentMoniker": "SWE_Project v1\\Form2.cs",
+              "ToolTip": "G:\\APPS\\VS\\Projects\\SWE_Project v1\\SWE_Project v1\\Form2.cs [Design]",
+              "RelativeToolTip": "SWE_Project v1\\Form2.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T08:40:30.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "G:\\APPS\\VS\\Projects\\SWE_Project v1\\SWE_Project v1\\Program.cs",
+              "RelativeDocumentMoniker": "SWE_Project v1\\Program.cs",
+              "ToolTip": "G:\\APPS\\VS\\Projects\\SWE_Project v1\\SWE_Project v1\\Program.cs",
+              "RelativeToolTip": "SWE_Project v1\\Program.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwBoAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T08:15:41.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "G:\\APPS\\VS\\Projects\\SWE_Project v1\\SWE_Project v1\\Form1.cs",
+              "RelativeDocumentMoniker": "SWE_Project v1\\Form1.cs",
+              "ToolTip": "G:\\APPS\\VS\\Projects\\SWE_Project v1\\SWE_Project v1\\Form1.cs",
+              "RelativeToolTip": "SWE_Project v1\\Form1.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAiwGYAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T07:50:55.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "G:\\APPS\\VS\\Projects\\SWE_Project v1\\SWE_Project v1\\Form2.cs",
+              "RelativeDocumentMoniker": "SWE_Project v1\\Form2.cs",
+              "ToolTip": "G:\\APPS\\VS\\Projects\\SWE_Project v1\\SWE_Project v1\\Form2.cs",
+              "RelativeToolTip": "SWE_Project v1\\Form2.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T08:40:43.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form2.Designer.cs",
+              "DocumentMoniker": "G:\\APPS\\VS\\Projects\\SWE_Project v1\\SWE_Project v1\\Form2.Designer.cs",
+              "RelativeDocumentMoniker": "SWE_Project v1\\Form2.Designer.cs",
+              "ToolTip": "G:\\APPS\\VS\\Projects\\SWE_Project v1\\SWE_Project v1\\Form2.Designer.cs",
+              "RelativeToolTip": "SWE_Project v1\\Form2.Designer.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T08:45:42.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "G:\\APPS\\VS\\Projects\\SWE_Project v1\\SWE_Project v1\\Form1.cs",
+              "RelativeDocumentMoniker": "SWE_Project v1\\Form1.cs",
+              "ToolTip": "G:\\APPS\\VS\\Projects\\SWE_Project v1\\SWE_Project v1\\Form1.cs [Design]",
+              "RelativeToolTip": "SWE_Project v1\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T07:50:53.084Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

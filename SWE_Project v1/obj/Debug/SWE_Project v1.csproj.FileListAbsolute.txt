@@ -1,0 +1,13 @@
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project v1.csproj.AssemblyReference.cache
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project.Form1.resources
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project_v1.Properties.Resources.resources
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project v1.csproj.GenerateResource.cache
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project v1.csproj.CoreCompileInputs.cache
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\SWE_Project v1.exe.config
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\SWE_Project v1.exe
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\SWE_Project v1.pdb
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\Oracle.DataAccess.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Proj.FC0F9AC1.Up2Date
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project v1.exe
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project v1.pdb
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project.Form2.resources
