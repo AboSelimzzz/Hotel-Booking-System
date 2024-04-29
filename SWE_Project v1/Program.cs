@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Oracle.DataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.DataAccess.Client;
+using Oracle.DataAccess.Types;
 
 namespace SWE_Project
 {
@@ -15,6 +18,7 @@ namespace SWE_Project
 
         public static Form1 form1 ;
         public static Form2 form2 ;
+        public static string ordb = "Data Source = ORCl;user id=hr;Password=hr;";
 
         [STAThread]
 
@@ -23,6 +27,7 @@ namespace SWE_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //form el login
             form1 =new Form1();
             form2 =new Form2();
             Application.Run(form1);
