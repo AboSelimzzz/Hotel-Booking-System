@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
+using SWE_Project_v1;
 
 namespace SWE_Project
 {
@@ -16,8 +17,11 @@ namespace SWE_Project
         /// </summary>
         /// 
 
-        public static Form1 form1 ;
-        public static Form2 form2 ;
+        public static Form1 form1;
+        public static Form2 form2;
+        public static Form3 form3;
+        public static Form4 form4;
+        public static int empid;
         public static string ordb = "Data Source = ORCl;user id=hr;Password=hr;";
 
         [STAThread]
@@ -27,11 +31,11 @@ namespace SWE_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //form el login
-            form1 =new Form1();
-            form2 =new Form2();
-            Application.Run(form1);
-            
+            form1 = new Form1();
+            form2 = new Form2();
+            form3 = new Form3();
+            form4 = new Form4();
+            Application.Run(form3);
         }
     }
 }

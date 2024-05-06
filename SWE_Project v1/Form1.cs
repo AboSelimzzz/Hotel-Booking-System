@@ -130,9 +130,9 @@ namespace SWE_Project
             if (CustID.Text == "" && Custmail.Text != "" && Custname.Text != "" && Custnumber.Text != "")
             {
                 OracleCommand cmd = new OracleCommand("GetMaxID", conn);
-                int newID;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("ID", OracleDbType.Int32, ParameterDirection.Output);
+                int newID;
                 cmd.ExecuteNonQuery();
                 try
                 {
@@ -201,6 +201,21 @@ namespace SWE_Project
             Custname.Text = "";
             Custmail.Text = "";
             Custnumber.Text = "";
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                DialogResult result = MessageBox.Show("Are you sure you want to Log-out?", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Program.form1.Hide();
+                    Program.form2.Hide();
+                    Program.form3.Show();
+                }
+            }
         }
     }
 }

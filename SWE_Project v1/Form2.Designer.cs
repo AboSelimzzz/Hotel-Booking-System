@@ -1,4 +1,6 @@
-﻿namespace SWE_Project
+﻿using System.Windows.Forms;
+
+namespace SWE_Project
 {
     partial class Form2
     {
@@ -53,6 +55,7 @@
             // 
             this.Edate.Location = new System.Drawing.Point(517, 88);
             this.Edate.Name = "Edate";
+            this.Edate.ReadOnly = true;
             this.Edate.Size = new System.Drawing.Size(153, 26);
             this.Edate.TabIndex = 2;
             // 
@@ -60,24 +63,25 @@
             // 
             this.Sdate.Location = new System.Drawing.Point(264, 88);
             this.Sdate.Name = "Sdate";
+            this.Sdate.ReadOnly = true;
             this.Sdate.Size = new System.Drawing.Size(160, 26);
             this.Sdate.TabIndex = 3;
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(470, 126);
+            this.monthCalendar1.Location = new System.Drawing.Point(452, 44);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 4;
             this.monthCalendar1.Visible = false;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // monthCalendar2
             // 
-            this.monthCalendar2.Location = new System.Drawing.Point(140, 123);
+            this.monthCalendar2.Location = new System.Drawing.Point(170, 44);
             this.monthCalendar2.Name = "monthCalendar2";
             this.monthCalendar2.TabIndex = 5;
             this.monthCalendar2.Visible = false;
-            this.monthCalendar2.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
+            this.monthCalendar2.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateSelected);
             // 
             // calbtn
             // 
@@ -101,16 +105,18 @@
             // 
             // typecmb
             // 
+            this.typecmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typecmb.FormattingEnabled = true;
             this.typecmb.Location = new System.Drawing.Point(37, 82);
             this.typecmb.Name = "typecmb";
             this.typecmb.Size = new System.Drawing.Size(121, 28);
             this.typecmb.TabIndex = 8;
+            this.typecmb.SelectedIndexChanged += new System.EventHandler(this.typecmb_SelectedIndexChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(351, 312);
-            this.button2.Name = "Book";
+            this.button2.Location = new System.Drawing.Point(301, 309);
+            this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 32);
             this.button2.TabIndex = 9;
             this.button2.Text = "Bookbtn";
@@ -122,6 +128,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.monthCalendar2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.typecmb);
             this.Controls.Add(this.calbtn2);
@@ -129,8 +137,6 @@
             this.Controls.Add(this.Sdate);
             this.Controls.Add(this.Edate);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.monthCalendar2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -42,46 +43,69 @@ namespace SWE_Project
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                DialogResult result = MessageBox.Show("Are you sure you want to Log-out?", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Program.form1.Hide();
+                    Program.form2.Hide();
+                    Program.form3.Show();
+                }
+            }
         }
 
         private void calbtn_Click(object sender, EventArgs e)
         {
             monthCalendar1.Visible = false;
-            monthCalendar2.Visible = !monthCalendar2.Visible;
+            monthCalendar2.Visible = true;
         }
 
-        private void monthCalendar2_DateChanged(object sender, DateRangeEventArgs e)
+        private void monthCalendar2_DateSelected(object sender, DateRangeEventArgs e)
         {
             DateTime selectedDate = monthCalendar2.SelectionStart.Date;
-            Sdate.Text = selectedDate.ToString(selectedDate.ToString("dd-MMM-yy"));
+            Sdate.Text = selectedDate.ToString(selectedDate.ToString("dd-MM-yy"));
+            monthCalendar2.Visible = false;
         }
 
         private void calbtn2_Click(object sender, EventArgs e)
         {
-            monthCalendar1.Visible = !monthCalendar1.Visible;
+            monthCalendar1.Visible = true;
             monthCalendar2.Visible = false;
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
             DateTime selectedDate = monthCalendar1.SelectionStart.Date;
-            Edate.Text = selectedDate.ToString(selectedDate.ToString("dd-MMM-yy"));
+            Edate.Text = selectedDate.ToString(selectedDate.ToString("dd-MM-yy"));
+            monthCalendar1.Visible = false;
         }
 
         private void Bookbtn_Click(object sender, EventArgs e)
         {
-            monthCalendar2.Visible = false;
-            monthCalendar1.Visible = false;
-            if (Edate.Text == "" && Edate.Text == "" && typecmb.SelectedText == "")
+            if (Edate.Text == "" || Sdate.Text == "" || typecmb.SelectedItem == null)
             {
                 MessageBox.Show("Fill all the data");
                 return;
             }
-            if(DateTime.Parse(Edate.Text) < DateTime.Parse(Sdate.Text))
+            if(DateTime.Parse(Edate.Text) <= DateTime.Parse(Sdate.Text))
             {
                 MessageBox.Show("Select Valid Date");
                 return;
+            }
+            OracleCommand c = new OracleCommand("GetMaxIDRES", conn);
+            c.CommandType = CommandType.StoredProcedure;
+            c.Parameters.Add("ID", OracleDbType.Int32, ParameterDirection.Output);
+            int newID;
+            c.ExecuteNonQuery();
+            try
+            {
+                newID = Convert.ToInt32(c.Parameters["ID"].Value.ToString()) + 1;
+            }
+            catch
+            {
+                newID = 1;
             }
             string query = "Select r.ROOM_ID, c.ROOM_COST " +
                 "from ROOMS_PROJECT r, COSTPERNIGHT_PROJECT c " +
@@ -89,32 +113,53 @@ namespace SWE_Project
             OracleCommand cmd = new OracleCommand(query, conn);
             cmd.Parameters.Add("type", typecmb.SelectedItem);
             OracleDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (dr.Read())
             {
                 decimal roomid = Decimal.Parse(dr[0].ToString());
                 string roomcost = dr[1].ToString();
-                int days = int.Parse(TimeSpan.Parse((DateTime.Parse(Edate.Text) - DateTime.Parse(Sdate.Text)).ToString()).TotalDays.ToString()); 
-                string q1 = "insert into RESERVATIONS_PROJECT " +
-                    "values(:id, :rid, :eid, :cid, :cost, to_date(:sdate, 'dd-MMM-yy'), to_date(:edate, 'dd-MMM-yy')); " +
-                    "Update Rooms_Project " +
-                    "SET Room_State = 'NO' " +
-                    "where Room_id = :roomid;";
+                int days = int.Parse(TimeSpan.Parse((DateTime.Parse(Edate.Text) - DateTime.Parse(Sdate.Text)).ToString()).TotalDays.ToString());
+                string q1 = "INSERT INTO RESERVATIONS_PROJECT " +
+                    "VALUES (:id, :rid, :eid, :cid, :cost, :sdate, :edate)";
+                OracleTransaction t = conn.BeginTransaction();
                 using (OracleCommand cmd1 = new OracleCommand(q1, conn))
                 {
-                    cmd1.Parameters.Add("id", 3);
-                    cmd1.Parameters.Add("rid", roomid);
-                    cmd1.Parameters.Add("eid", 1); //el id beta3 el employee
-                    cmd1.Parameters.Add("cid", Program.form1.id);
-                    cmd1.Parameters.Add("cost", Decimal.Parse((int.Parse(roomcost) * days).ToString()));
-                    cmd1.Parameters.Add("sdate", DateTime.ParseExact(Sdate.Text, "dd-MMM-yy", System.Globalization.CultureInfo.InvariantCulture));
-                    cmd1.Parameters.Add("edate", DateTime.ParseExact(Edate.Text, "dd-MMM-yy", System.Globalization.CultureInfo.InvariantCulture));
-                    cmd1.Parameters.Add("roomid", roomid);
+                    cmd1.Parameters.Add("id", OracleDbType.Int32).Value = newID;
+                    cmd1.Parameters.Add("rid", OracleDbType.Int32).Value = roomid;
+                    cmd1.Parameters.Add("eid", OracleDbType.Int32).Value = 1; // Employee ID
+                    cmd1.Parameters.Add("cid", OracleDbType.Int32).Value = Program.form1.id;
+                    decimal cost = int.Parse(roomcost) * days;
+                    cmd1.Parameters.Add("cost", OracleDbType.Decimal).Value = cost;
+                    cmd1.Parameters.Add("sdate", OracleDbType.Date).Value = DateTime.Parse(Sdate.Text);
+                    cmd1.Parameters.Add("edate", OracleDbType.Date).Value = DateTime.Parse(Edate.Text);
                     if (cmd1.ExecuteNonQuery() == -1)
+                    {
                         MessageBox.Show("Error");
+                    }
                     else
-                        MessageBox.Show("Room number = " + dr[0].ToString());
+                    {
+                        DialogResult result = MessageBox.Show("The reservation cost is: " + cost.ToString() + "L.E.\nDo you want to continue?", "Confirmation", MessageBoxButtons.YesNo);
+                        if(result == DialogResult.Yes)
+                        {
+                            t.Commit();
+                            MessageBox.Show("The room number is: " + roomid.ToString());
+                        }
+                        else if (result == DialogResult.No)
+                        {
+                            t.Rollback();
+                        }
+                    }
                 }
-            }            
+            }
+            else
+            {
+                MessageBox.Show("There is no rooms by this type available now");
+            }
+        }
+
+        private void typecmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            monthCalendar1.Visible = false;
+            monthCalendar2.Visible = false;
         }
     }
 }
