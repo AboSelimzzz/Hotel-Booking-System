@@ -7,9 +7,28 @@ G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\SWE_Project v1.exe.c
 G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\SWE_Project v1.exe
 G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\SWE_Project v1.pdb
 G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\Oracle.DataAccess.dll
-G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Proj.FC0F9AC1.Up2Date
 G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project v1.exe
 G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project v1.pdb
 G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project.Form2.resources
 G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project.Form3.resources
 G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project.Form4.resources
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project.Form5.resources
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.ReportSource.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.Shared.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\stdole.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project v1.csproj.CopyComplete
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.Windows.Forms.dll
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project.Form6.resources

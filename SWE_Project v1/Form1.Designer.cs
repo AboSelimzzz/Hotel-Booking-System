@@ -46,42 +46,94 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
+            // CustID
+            // 
+            this.CustID.Location = new System.Drawing.Point(23, 46);
+            this.CustID.Name = "CustID";
+            this.CustID.ReadOnly = true;
+            this.CustID.Size = new System.Drawing.Size(100, 26);
+            this.CustID.TabIndex = 0;
+            // 
+            // Custname
+            // 
+            this.Custname.Location = new System.Drawing.Point(179, 46);
+            this.Custname.Name = "Custname";
+            this.Custname.Size = new System.Drawing.Size(219, 26);
+            this.Custname.TabIndex = 1;
+            // 
+            // Custmail
+            // 
+            this.Custmail.Location = new System.Drawing.Point(552, 46);
+            this.Custmail.Name = "Custmail";
+            this.Custmail.Size = new System.Drawing.Size(273, 26);
+            this.Custmail.TabIndex = 2;
+            // 
             // Custnumber
             // 
             this.Custnumber.Location = new System.Drawing.Point(983, 46);
             this.Custnumber.Name = "Custnumber";
             this.Custnumber.Size = new System.Drawing.Size(193, 26);
-            this.Custnumber.TabIndex = 0;
-            // 
-            // bookbtn
-            // 
-            this.bookbtn.Location = new System.Drawing.Point(1048, 120);
-            this.bookbtn.Name = "bookbtn";
-            this.bookbtn.Size = new System.Drawing.Size(102, 34);
-            this.bookbtn.TabIndex = 3;
-            this.bookbtn.Text = "Book";
-            this.bookbtn.UseVisualStyleBackColor = true;
-            this.bookbtn.Click += new System.EventHandler(this.bookbtn_Click);
-            // 
-            // searchbtn
-            // 
-            this.searchbtn.Location = new System.Drawing.Point(733, 120);
-            this.searchbtn.Name = "searchbtn";
-            this.searchbtn.Size = new System.Drawing.Size(92, 34);
-            this.searchbtn.TabIndex = 4;
-            this.searchbtn.Text = "Search";
-            this.searchbtn.UseVisualStyleBackColor = true;
-            this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
+            this.Custnumber.TabIndex = 3;
             // 
             // Addbtn
             // 
             this.Addbtn.Location = new System.Drawing.Point(151, 120);
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(97, 34);
-            this.Addbtn.TabIndex = 5;
+            this.Addbtn.TabIndex = 4;
             this.Addbtn.Text = "Add";
             this.Addbtn.UseVisualStyleBackColor = true;
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
+            // 
+            // Deletebtn
+            // 
+            this.Deletebtn.Location = new System.Drawing.Point(281, 120);
+            this.Deletebtn.Name = "Deletebtn";
+            this.Deletebtn.Size = new System.Drawing.Size(97, 34);
+            this.Deletebtn.TabIndex = 5;
+            this.Deletebtn.Text = "Delete";
+            this.Deletebtn.UseVisualStyleBackColor = true;
+            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
+            // 
+            // Editbtn
+            // 
+            this.Editbtn.Location = new System.Drawing.Point(412, 120);
+            this.Editbtn.Name = "Editbtn";
+            this.Editbtn.Size = new System.Drawing.Size(97, 34);
+            this.Editbtn.TabIndex = 6;
+            this.Editbtn.Text = "Edit";
+            this.Editbtn.UseVisualStyleBackColor = true;
+            this.Editbtn.Click += new System.EventHandler(this.Editbtn_Click);
+            // 
+            // Clearbtn
+            // 
+            this.Clearbtn.Location = new System.Drawing.Point(590, 120);
+            this.Clearbtn.Name = "Clearbtn";
+            this.Clearbtn.Size = new System.Drawing.Size(75, 34);
+            this.Clearbtn.TabIndex = 7;
+            this.Clearbtn.Text = "Clear";
+            this.Clearbtn.UseVisualStyleBackColor = true;
+            this.Clearbtn.Click += new System.EventHandler(this.Clearbtn_Click);
+            // 
+            // searchbtn
+            // 
+            this.searchbtn.Location = new System.Drawing.Point(733, 120);
+            this.searchbtn.Name = "searchbtn";
+            this.searchbtn.Size = new System.Drawing.Size(92, 34);
+            this.searchbtn.TabIndex = 8;
+            this.searchbtn.Text = "Search";
+            this.searchbtn.UseVisualStyleBackColor = true;
+            this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
+            // 
+            // bookbtn
+            // 
+            this.bookbtn.Location = new System.Drawing.Point(1048, 120);
+            this.bookbtn.Name = "bookbtn";
+            this.bookbtn.Size = new System.Drawing.Size(102, 34);
+            this.bookbtn.TabIndex = 9;
+            this.bookbtn.Text = "Book";
+            this.bookbtn.UseVisualStyleBackColor = true;
+            this.bookbtn.Click += new System.EventHandler(this.bookbtn_Click);
             // 
             // dataGridView1
             // 
@@ -91,59 +143,8 @@
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1373, 464);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // Custname
-            // 
-            this.Custname.Location = new System.Drawing.Point(179, 46);
-            this.Custname.Name = "Custname";
-            this.Custname.Size = new System.Drawing.Size(219, 26);
-            this.Custname.TabIndex = 7;
-            // 
-            // Custmail
-            // 
-            this.Custmail.Location = new System.Drawing.Point(552, 46);
-            this.Custmail.Name = "Custmail";
-            this.Custmail.Size = new System.Drawing.Size(273, 26);
-            this.Custmail.TabIndex = 8;
-            // 
-            // Editbtn
-            // 
-            this.Editbtn.Location = new System.Drawing.Point(412, 120);
-            this.Editbtn.Name = "Editbtn";
-            this.Editbtn.Size = new System.Drawing.Size(97, 34);
-            this.Editbtn.TabIndex = 9;
-            this.Editbtn.Text = "Edit";
-            this.Editbtn.UseVisualStyleBackColor = true;
-            this.Editbtn.Click += new System.EventHandler(this.Editbtn_Click);
-            // 
-            // Deletebtn
-            // 
-            this.Deletebtn.Location = new System.Drawing.Point(281, 120);
-            this.Deletebtn.Name = "Deletebtn";
-            this.Deletebtn.Size = new System.Drawing.Size(97, 34);
-            this.Deletebtn.TabIndex = 10;
-            this.Deletebtn.Text = "Delete";
-            this.Deletebtn.UseVisualStyleBackColor = true;
-            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
-            // 
-            // CustID
-            // 
-            this.CustID.Location = new System.Drawing.Point(23, 46);
-            this.CustID.Name = "CustID";
-            this.CustID.ReadOnly = true;
-            this.CustID.Size = new System.Drawing.Size(100, 26);
-            this.CustID.TabIndex = 11;
-            // 
-            // Clearbtn
-            // 
-            this.Clearbtn.Location = new System.Drawing.Point(590, 120);
-            this.Clearbtn.Name = "Clearbtn";
-            this.Clearbtn.Size = new System.Drawing.Size(75, 34);
-            this.Clearbtn.TabIndex = 12;
-            this.Clearbtn.Text = "Clear";
-            this.Clearbtn.UseVisualStyleBackColor = true;
-            this.Clearbtn.Click += new System.EventHandler(this.Clearbtn_Click);
+            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
             // label1
             // 
@@ -151,7 +152,7 @@
             this.label1.Location = new System.Drawing.Point(50, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 20);
-            this.label1.TabIndex = 13;
+            this.label1.TabIndex = 11;
             this.label1.Text = "ID";
             // 
             // label2
@@ -160,7 +161,7 @@
             this.label2.Location = new System.Drawing.Point(277, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 20);
-            this.label2.TabIndex = 14;
+            this.label2.TabIndex = 12;
             this.label2.Text = "name";
             // 
             // label3
@@ -169,7 +170,7 @@
             this.label3.Location = new System.Drawing.Point(673, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 20);
-            this.label3.TabIndex = 15;
+            this.label3.TabIndex = 14;
             this.label3.Text = "email";
             // 
             // label4
@@ -178,7 +179,7 @@
             this.label4.Location = new System.Drawing.Point(1044, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 20);
-            this.label4.TabIndex = 16;
+            this.label4.TabIndex = 15;
             this.label4.Text = "Number";
             // 
             // Form1

@@ -26,7 +26,7 @@ namespace SWE_Project
         {
             conn = new OracleConnection(ordb);
             conn.Open();
-            string query = "Select ROOM_TYPE"/*, row_number() over () id */+" from COSTPERNIGHT_PROJECT"/* order by id"*/;
+            string query = "Select ROOM_TYPE from COSTPERNIGHT_PROJECT";
             OracleCommand cmd = new OracleCommand(query, conn);
             OracleDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -56,30 +56,16 @@ namespace SWE_Project
             }
         }
 
-        private void calbtn_Click(object sender, EventArgs e)
-        {
-            monthCalendar1.Visible = false;
-            monthCalendar2.Visible = true;
-        }
-
         private void monthCalendar2_DateSelected(object sender, DateRangeEventArgs e)
         {
             DateTime selectedDate = monthCalendar2.SelectionStart.Date;
             Sdate.Text = selectedDate.ToString(selectedDate.ToString("dd-MM-yy"));
-            monthCalendar2.Visible = false;
-        }
-
-        private void calbtn2_Click(object sender, EventArgs e)
-        {
-            monthCalendar1.Visible = true;
-            monthCalendar2.Visible = false;
         }
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
             DateTime selectedDate = monthCalendar1.SelectionStart.Date;
             Edate.Text = selectedDate.ToString(selectedDate.ToString("dd-MM-yy"));
-            monthCalendar1.Visible = false;
         }
 
         private void Bookbtn_Click(object sender, EventArgs e)
@@ -125,7 +111,7 @@ namespace SWE_Project
                 {
                     cmd1.Parameters.Add("id", OracleDbType.Int32).Value = newID;
                     cmd1.Parameters.Add("rid", OracleDbType.Int32).Value = roomid;
-                    cmd1.Parameters.Add("eid", OracleDbType.Int32).Value = 1; // Employee ID
+                    cmd1.Parameters.Add("eid", OracleDbType.Int32).Value = Program.empid; // Employee ID
                     cmd1.Parameters.Add("cid", OracleDbType.Int32).Value = Program.form1.id;
                     decimal cost = int.Parse(roomcost) * days;
                     cmd1.Parameters.Add("cost", OracleDbType.Decimal).Value = cost;
@@ -140,6 +126,15 @@ namespace SWE_Project
                         DialogResult result = MessageBox.Show("The reservation cost is: " + cost.ToString() + "L.E.\nDo you want to continue?", "Confirmation", MessageBoxButtons.YesNo);
                         if(result == DialogResult.Yes)
                         {
+                            q1 = "UPDATE ROOMS_PROJECT " +
+                                "SET ROOM_STATE = 'NO'" +
+                                "WHERE ROOM_ID = :id";
+                            OracleCommand com = new OracleCommand(q1, conn);
+                            com.Parameters.Add("id", roomid);
+                            if (com.ExecuteNonQuery() != -1)
+                                MessageBox.Show("Reservation Done");
+                            else
+                                MessageBox.Show("Error appeared");
                             t.Commit();
                             MessageBox.Show("The room number is: " + roomid.ToString());
                         }
@@ -158,8 +153,6 @@ namespace SWE_Project
 
         private void typecmb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            monthCalendar1.Visible = false;
-            monthCalendar2.Visible = false;
         }
     }
 }

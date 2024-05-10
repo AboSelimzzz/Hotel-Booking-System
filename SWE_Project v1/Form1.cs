@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,6 +23,7 @@ namespace SWE_Project
         {
             InitializeComponent();
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             conn = new OracleConnection(ordb);
@@ -34,7 +36,7 @@ namespace SWE_Project
             dataGridView1.Columns.Add("start_date", "start_date");
             dataGridView1.Columns.Add("end_date", "end_date");
             string query = "SELECT r.RESERVATION_ID, r.ROOM_ID, room.ROOM_TYPE, " +
-                "emp.EMPLOYEE_NAME, r.RESERVATION_COST, r.START_DATE, r.END_DATE " +
+                "emp.EMPLOYEE_NAME, r.RESERVATION_COST, r.START_DATE, r.END_DATE, r.Customer_id " +
                 "FROM RESERVATIONS_PROJECT r " +
                 "JOIN ROOMS_PROJECT room ON room.room_id = r.room_id " +
                 "JOIN EMPLOYEES_PROJECT emp ON emp.employee_id = r.employee_id ";
@@ -216,6 +218,65 @@ namespace SWE_Project
                     Program.form3.Show();
                 }
             }
+        }
+
+        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Form5 form5 = new Form5();
+            DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
+            object[] rowData = new object[selectedRow.Cells.Count];
+            for (int i = 0; i < selectedRow.Cells.Count; i++)
+            {
+                rowData[i] = selectedRow.Cells[i].Value;
+            }
+            form5.dataGridView2.Rows.Add(rowData);
+            form5.Show();
+            this.Hide();
+        }
+
+        public void Update_datagrid()
+        {
+            dataGridView1.Rows.Clear();
+            string query = "SELECT r.RESERVATION_ID, r.ROOM_ID, room.ROOM_TYPE, " +
+                "emp.EMPLOYEE_NAME, r.RESERVATION_COST, r.START_DATE, r.END_DATE " +
+                "FROM RESERVATIONS_PROJECT r " +
+                "JOIN ROOMS_PROJECT room ON room.room_id = r.room_id " +
+                "JOIN EMPLOYEES_PROJECT emp ON emp.employee_id = r.employee_id ";
+            OracleCommand cmd = new OracleCommand(query, conn);
+            OracleDataReader reader = cmd.ExecuteReader();
+            string[] tmp = new string[7];
+            while (reader.Read())
+            {
+                for (int i = 0; i < 7; i++)
+                    tmp[i] = (reader[i].ToString());
+                dataGridView1.Rows.Add(tmp);
+            }
+            reader.Close();
+        }
+
+        public void notify()
+        {
+            dataGridView1.Rows.Clear();
+            string query = "SELECT r.RESERVATION_ID, r.ROOM_ID, room.ROOM_TYPE, " +
+                "emp.EMPLOYEE_NAME, r.RESERVATION_COST, r.START_DATE, r.END_DATE, r.Customer_id " +
+                "FROM RESERVATIONS_PROJECT r " +
+                "JOIN ROOMS_PROJECT room ON room.room_id = r.room_id " +
+                "JOIN EMPLOYEES_PROJECT emp ON emp.employee_id = r.employee_id ";
+            OracleCommand cmd = new OracleCommand(query, conn);
+            OracleDataReader reader = cmd.ExecuteReader();
+            string[] tmp = new string[7];
+            while (reader.Read())
+            {
+                for (int i = 0; i < 7; i++)
+                    tmp[i] = (reader[i].ToString());
+                dataGridView1.Rows.Add(tmp);
+                if (DateTime.Today == DateTime.Parse(reader[6].ToString()))
+                {
+                    MessageBox.Show("The Customer whose id = " + reader[7].ToString() + " will end his reservation Today");
+                }
+            }
+            reader.Close();
         }
     }
 }
