@@ -55,38 +55,41 @@ namespace SWE_Project
         private void searchbtn_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
-            string custIdQuery = "SELECT * FROM CUSTOMERS_PROJECT" +
-                                     " WHERE customer_name = :name AND phone_number = :phone";
-            OracleCommand cmdcust = new OracleCommand(custIdQuery, conn); 
-            cmdcust.CommandText = custIdQuery;
-            cmdcust.Parameters.Add("name", Custname.Text);
-            cmdcust.Parameters.Add("phone", Custnumber.Text);
-            OracleDataReader readercust = cmdcust.ExecuteReader();
-            if (readercust.Read())
+            try
             {
-                CustID.Text = readercust[0].ToString();
-                Custname.Text = readercust[1].ToString();
-                Custmail.Text = readercust[2].ToString();
-                Custnumber.Text = readercust[3].ToString();
+                string custIdQuery = "GetCustomer";
+                OracleCommand cmdcust = new OracleCommand(custIdQuery, conn);
+                cmdcust.CommandType = CommandType.StoredProcedure;
+                cmdcust.Parameters.Add("custid", OracleDbType.Int32).Direction = ParameterDirection.Output;
+                cmdcust.Parameters.Add("custname", OracleDbType.Varchar2, 50).Value = Custname.Text;
+                cmdcust.Parameters.Add("custemail", OracleDbType.Varchar2, 50).Direction = ParameterDirection.Output;
+                cmdcust.Parameters.Add("custnumber", OracleDbType.Varchar2, 50).Value = Custnumber.Text;
+
+                cmdcust.ExecuteNonQuery();
+
+                CustID.Text = cmdcust.Parameters["custid"].Value.ToString();
+                Custmail.Text = cmdcust.Parameters["custemail"].Value.ToString();
             }
-            readercust.Close();
+            catch (OracleException ex) {}
+
+
             OracleCommand cmdres;
             if (CustID.Text != "")
             {
-                string query = "SELECT r.RESERVATION_ID, r.ROOM_ID, room.ROOM_TYPE," +
-                    " emp.EMPLOYEE_NAME, r.RESERVATION_COST, r.START_DATE, r.END_DATE " +
-                    "FROM RESERVATIONS_PROJECT r " +
-                    "JOIN ROOMS_PROJECT room ON room.room_id = r.room_id " +
-                    "JOIN EMPLOYEES_PROJECT emp ON emp.employee_id = r.employee_id " +
-                    "WHERE r.CUSTOMER_ID = :id";
+                string query = "GetCustRes";
                 cmdres = new OracleCommand(query, conn);
-                cmdres.Parameters.Add("id", Decimal.Parse(CustID.Text));
+                cmdres.CommandType = CommandType.StoredProcedure;
+                cmdres.Parameters.Add("custid", OracleDbType.Decimal).Value = Decimal.Parse(CustID.Text);
+                cmdres.Parameters.Add("resid", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
                 OracleDataReader dr = cmdres.ExecuteReader();
+                if (dr.HasRows == false)
+                    MessageBox.Show("NO reservation for this customer");
                 while (dr.Read())
                 {
                     string[] tmp = new string[7];
                     for (int i = 0; i < 7; i++)
-                        tmp[i] = (dr[i].ToString());
+                        tmp[i] = dr[i].ToString();
                     dataGridView1.Rows.Add(tmp);
                 }
                 dr.Close();
@@ -119,7 +122,7 @@ namespace SWE_Project
         {
             if(CustID.Text == "")
             {
-                MessageBox.Show("Fill the ID field except the id");
+                MessageBox.Show("Must search on a Customer first");
                 return;
             }
             id = Decimal.Parse(CustID.Text);

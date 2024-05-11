@@ -21,7 +21,10 @@ namespace SWE_Project
         public static Form2 form2;
         public static Form3 form3;
         public static Form4 form4;
+        public static Form6 form6;
         public static int empid;
+        public static MonthCalendar m1;
+        public static MonthCalendar m2;
         public static string ordb = "Data Source = ORCl;user id=hr;Password=hr;";
 
         [STAThread]

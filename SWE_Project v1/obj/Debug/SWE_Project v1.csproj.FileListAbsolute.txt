@@ -32,3 +32,5 @@ G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\stdole.dll
 G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project v1.csproj.CopyComplete
 G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\bin\Debug\CrystalDecisions.Windows.Forms.dll
 G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project.Form6.resources
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project.Form7.resources
+G:\APPS\VS\Projects\SWE_Project v1\SWE_Project v1\obj\Debug\SWE_Project.Form8.resources

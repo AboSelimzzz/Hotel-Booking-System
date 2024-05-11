@@ -14,7 +14,6 @@ namespace SWE_Project
 {
     public partial class Form6 : Form
     {
-        Crystal1 CR;
         CrystalReport2 CR2;
         public Form6()
         {
@@ -27,8 +26,9 @@ namespace SWE_Project
 
         private void report1_Click(object sender, EventArgs e)
         {
-            CR = new Crystal1();
-            crystalReportViewer1.ReportSource = CR;
+            Form7 f = new Form7();
+            this.Hide();
+            f.Show();
         }
 
         private void Form6_FormClosing(object sender, FormClosingEventArgs e)
@@ -38,12 +38,16 @@ namespace SWE_Project
 
         private void report2_Click(object sender, EventArgs e)
         {
-            CR2 = new CrystalReport2();
-            CR2.SetParameterValue(0, monthCalendar1.SelectionEnd);
-            CR2.SetParameterValue(1, monthCalendar2.SelectionEnd);
-            crystalReportViewer1.ReportSource = CR2;
-            monthCalendar1.Visible = false;
-            monthCalendar2.Visible = false;
+            Program.m1 = monthCalendar1;
+            Program.m2 = monthCalendar2;
+            Form8 f = new Form8();
+            this.Hide();
+            f.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

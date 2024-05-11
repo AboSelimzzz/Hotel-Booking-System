@@ -88,17 +88,17 @@
             // 
             this.Sdate.Location = new System.Drawing.Point(684, 43);
             this.Sdate.Name = "Sdate";
+            this.Sdate.ReadOnly = true;
             this.Sdate.Size = new System.Drawing.Size(100, 26);
             this.Sdate.TabIndex = 5;
-            this.Sdate.ReadOnly = true;
             // 
             // Edate
             // 
             this.Edate.Location = new System.Drawing.Point(825, 43);
             this.Edate.Name = "Edate";
+            this.Edate.ReadOnly = true;
             this.Edate.Size = new System.Drawing.Size(100, 26);
             this.Edate.TabIndex = 6;
-            this.Edate.ReadOnly = true;
             // 
             // label1
             // 
@@ -154,6 +154,7 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Start date                                                                       " +
     "                                         End Date";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Checkout
             // 

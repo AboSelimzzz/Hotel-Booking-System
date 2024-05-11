@@ -75,7 +75,7 @@ namespace SWE_Project
                 MessageBox.Show("Fill all the data");
                 return;
             }
-            if(DateTime.Parse(Edate.Text) <= DateTime.Parse(Sdate.Text))
+            if(DateTime.Parse(Edate.Text) <= DateTime.Parse(Sdate.Text) || DateTime.Parse(Sdate.Text) < DateTime.Today)
             {
                 MessageBox.Show("Select Valid Date");
                 return;
@@ -137,22 +137,17 @@ namespace SWE_Project
                                 MessageBox.Show("Error appeared");
                             t.Commit();
                             MessageBox.Show("The room number is: " + roomid.ToString());
+                            this.Hide();
+                            Program.form1.Update_datagrid();
+                            Program.form1.Show();
                         }
                         else if (result == DialogResult.No)
-                        {
                             t.Rollback();
-                        }
                     }
                 }
             }
             else
-            {
                 MessageBox.Show("There is no rooms by this type available now");
-            }
-        }
-
-        private void typecmb_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
     }
 }

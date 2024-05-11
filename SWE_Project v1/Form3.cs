@@ -24,6 +24,7 @@ namespace SWE_Project
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("PLease make the date format of your pc is dd/MM//yyyy");
             conn = new OracleConnection(ordb);
             conn.Open();
             Password.UseSystemPasswordChar = true;
@@ -35,13 +36,9 @@ namespace SWE_Project
             {
                 DialogResult result = MessageBox.Show("Are you sure you want to quit?", "Confirmation", MessageBoxButtons.YesNo);
                 if (result == DialogResult.No)
-                {
                     e.Cancel = true;
-                }
                 else
-                {
                     Application.Exit();
-                }
             }
         }
 
@@ -73,11 +70,13 @@ namespace SWE_Project
                     Program.form1.notify();
                 }
                 else
-                {
                     MessageBox.Show("There is an error in the data");
-
-                }
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

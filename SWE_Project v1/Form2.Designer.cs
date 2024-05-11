@@ -87,7 +87,6 @@ namespace SWE_Project
             this.typecmb.Name = "typecmb";
             this.typecmb.Size = new System.Drawing.Size(121, 28);
             this.typecmb.TabIndex = 8;
-            this.typecmb.SelectedIndexChanged += new System.EventHandler(this.typecmb_SelectedIndexChanged);
             // 
             // button2
             // 

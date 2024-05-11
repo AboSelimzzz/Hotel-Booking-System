@@ -25,11 +25,6 @@ namespace SWE_Project
             InitializeComponent();
         }
 
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form4_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -83,9 +78,9 @@ namespace SWE_Project
             checkedListBox1.Visible = false;
             checkedListBox2.Visible = false;
             Apply.Visible = false;
-            Form6 form6 = new Form6();
+            Program.form6 = new Form6();
             this.Hide();
-            form6.Show();
+            Program.form6.Show();
         }
 
         private void Apply_Click(object sender, EventArgs e)
@@ -142,6 +137,11 @@ namespace SWE_Project
             ds = new DataSet();
             adapter.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

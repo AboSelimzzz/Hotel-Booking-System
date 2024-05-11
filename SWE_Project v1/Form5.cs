@@ -160,5 +160,10 @@ namespace SWE_Project
             }
             this.Close();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
